@@ -9,10 +9,10 @@ import (
 var StdChars = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+,.?/:;{}[]`~")
 
 func NewPassword(length int) string {
-    return RandChar(length, StdChars)
+    return rand_char(length, StdChars)
 }
 
-func RandChar(length int, chars []byte) string {
+func rand_char(length int, chars []byte) string {
     new_pword := make([]byte, length)
     random_data := make([]byte, length+(length/4)) // storage for random bytes.
     clen := byte(len(chars))
