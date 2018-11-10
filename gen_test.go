@@ -21,3 +21,14 @@ func TestNewPasswordMoreThanStdChars(t *testing.T) {
 		}
 	}
 }
+
+func TestMultiple32(t *testing.T) {
+	var s = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef")
+	if len(s) != 32 {
+		t.Fatal("s needs to be 32")
+	}
+	x := rand_char(32, s)
+	if len(x) != 32 {
+		t.Fatal("The password returned was too short")
+	}
+}
